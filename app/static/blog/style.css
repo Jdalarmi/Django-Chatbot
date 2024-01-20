@@ -1,55 +1,60 @@
-#chatbot{
-    margin-left: auto;
-    margin-right: auto;
+body {
+    margin: -20px 0 0 0;
+    padding: 0;
+    background-image: url('../img/test.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chatbot {
     width: 70%;
-    margin-top: 50px;
+    margin: auto 0px;
     border-radius: 10px;
     border: 1px solid gray;
-    padding: 10px;
+    padding: 20px;
+    text-align: center;
+    align-self: flex-start;
 }
 
-
-.botText{
+.botText, .userText {
     font-family: monospace;
-    font-size: 14px;
-    text-align: left;
-    line-height: 25px;
-    color: rgb(109, 111, 109);
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
 }
 
-#userInput{
-    margin-left: auto;
-    margin-right: auto;
+#userInput {
     margin-top: 40px;
-    width: 70%;
     text-align: center;
 }
-#textInput{
-    border: 3px solid white;
-    border-bottom: 3px solid gray;
+
+#textInput {
+    border: 3px solid gray;
+    border-radius: 5px;
     font-family: monospace;
     font-size: 14px;
     width: 60%;
-    padding: 16px;
-    color: rgb(213, 67, 41);
+    padding: 12px;
+    color: #d54329;
 }
-#buttonInput{
-    padding: 5px;
+
+#buttonInput {
+    padding: 10px 20px;
     font-family: monospace;
     font-size: 14px;
     border: 3px solid #5b605c;
     background-color: rgb(40, 48, 40);
     color: white;
     border-radius: 10px;
+    cursor: pointer;
 }
-h1{
+
+h1 {
     text-align: center;
     color: rgb(57, 72, 57);
-}
-.userText{
-    text-align: right;
-    font-family: monospace;
-    font-size: 14px;
-    line-height: 25px;
-    color: rgb(109, 111, 109);
 }

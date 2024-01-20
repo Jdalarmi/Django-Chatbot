@@ -4,15 +4,25 @@ from django.http import HttpResponse
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-bot = ChatBot('chatbot', read_only=False, logic_adapters=['chatterbot.logic.BestMatch'])
+bot = ChatBot('chatbot', read_only=False,
+              logic_adapters=[{
+
+                  'import_path':'chatterbot.logic.BestMatch',
+                  'default_response': 'Sorry, I dont know what that means',
+                  'maximum_similarity_threshold': 0.90
+                  }])
 
 list_to_train = [
     "hi",
     "hi there",
-    "What's your name?",
+    "Whats your name?",
     "I am just a chatbot",
     "What is your favorite food?",
-    "I like Pizza"
+    "I like Pizza",
+    "What's your favorite sport?",
+    "swimming",
+    "do you have children?",
+    "No! you crazy mothafucka!!"
 ]
 
 list_trainer = ListTrainer(bot)
@@ -27,4 +37,5 @@ def specific(request):
 
 def getresponse(request):
     userMessage = request.GET.get('userMessage')
-    return HttpResponse(userMessage)
+    chat_response = str(bot.get_response(userMessage))
+    return HttpResponse(chat_response)

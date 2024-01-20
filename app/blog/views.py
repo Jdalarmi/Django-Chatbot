@@ -7,10 +7,10 @@ from chatterbot.trainers import ListTrainer
 bot = ChatBot('chatbot', read_only=False,
               logic_adapters=[{
 
-                  'import_path':'chatterbot.logic.BestMatch',
+                  'import_path': 'chatterbot.logic.BestMatch',
                   'default_response': 'Sorry, I dont know what that means',
-                  'maximum_similarity_threshold': 0.90
-                  }])
+                  'maximum_similarity_threshold': 0.95
+              }])
 
 list_to_train = [
     "hi",

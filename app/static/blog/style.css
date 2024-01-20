@@ -13,9 +13,9 @@ body {
 
 #chatbot {
     width: 70%;
-    margin: auto 0px;
+    margin: auto 20px;
     border-radius: 10px;
-    border: 1px solid gray;
+    border: 2px solid gray;
     padding: 20px;
     text-align: center;
     align-self: flex-start;
@@ -23,13 +23,13 @@ body {
 
 .botText, .userText {
     font-family: monospace;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
     color: #333;
 }
 
 #userInput {
-    margin-top: 40px;
+    margin-top: 50px;
     text-align: center;
 }
 
@@ -37,7 +37,7 @@ body {
     border: 3px solid gray;
     border-radius: 5px;
     font-family: monospace;
-    font-size: 14px;
+    font-size: 17px;
     width: 60%;
     padding: 12px;
     color: #d54329;

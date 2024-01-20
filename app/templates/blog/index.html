@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "blog/style.css" %}">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1>ChatBot</h1>
@@ -19,5 +21,29 @@
             <input type="submit" value="Send" id="buttonInput">
         </div>
     </div>
+
+    <script>
+        function getUserResponse(){
+            var userText = $('#textInput').val();
+            var userHTML = "<p class='userText'>User: <span>"+userText+"</span></p>";
+            $('#textInput').val("");
+
+            $('#chatbot').append(userHTML);
+
+            $.get('/blog/getResponse',{userMessage:userText}).done(function(data){
+                var returnMessage = "<p class='botText'>ChatBot: <span>"+data +"</span></p>";
+                $('#chatbot').append(returnMessage);
+
+            })
+
+        }
+
+        $('#buttonInput').click(function(){
+            getUserResponse();
+        })
+    </script>
+
+
+
 </body>
 </html>
